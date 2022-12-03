@@ -4,39 +4,36 @@ import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
 import { Image } from "@astrojs/image/components";
 
-const TeamImg1 =
-  "https://images.unsplash.com/photo-1580489944761-15a19d654956?&fit=crop&w=280";
-const TeamImg2 =
-  "https://images.unsplash.com/photo-1633332755192-727a05c4013d?&fit=crop&w=280";
-const TeamImg3 =
-  "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?&fit=crop&w=280";
+const TeamImg1 = "src/assets/tankashing.png";
+const TeamImg2 = "src/assets/tanjoey.png";
+const TeamImg3 = "src/assets/shahzaman.png";
 
 const team = [
   {
-    name: "Janette Lynch",
-    title: "Senior Director",
+    name: "Tan Ka-Shing",
+    title: "CEO, Tech Lead",
     avatar: {
       src: TeamImg1,
-      width: 480,
-      height: 560,
+      width: 570,
+      height: 570,
     },
   },
   {
-    name: "Marcell Ziemann",
-    title: "Principal Strategist",
+    name: "Shawn Yeoh",
+    title: "Product Manager",
     avatar: {
       src: TeamImg2,
-      width: 580,
-      height: 580,
+      width: 570,
+      height: 570,
     },
   },
   {
-    name: "Robert Palmer",
-    title: "Marketing Engineer",
+    name: "Shahzaman Khan",
+    title: "Business Advisor",
     avatar: {
       src: TeamImg3,
-      width: 580,
-      height: 580,
+      width: 570,
+      height: 570,
     },
   },
 ];
@@ -45,18 +42,21 @@ const team = [
 <Layout title="About">
   <Container>
     <Sectionhead>
-      <Fragment slot="title">About</Fragment>
+      <Fragment slot="title">About Us</Fragment>
       <Fragment slot="desc">We are a small passionate team.</Fragment>
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
       <h2 class="font-bold text-3xl text-gray-800">
-        Empowering the world with Astro.
+        Empowering Malaysia with EasyAccel
       </h2>
       <p class="text-lg leading-relaxed text-slate-500">
-        We're a multi-cultural team from around the world! We come from diverse
-        backgrounds, bringing different personalities, experiences and skills to
-        the job. This is what makes our team so special.
+        We are a young entrepreneurial team with a diverse skillset background,
+        passionate in delivering high impact, low cost solutions.
+        <wbr />
+        Our vision began with our friends and clients needing a quick solution amidst
+        the COVID-influenced economy that required an increasing important online
+        presence.
       </p>
     </div>
     <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-4xl mt-12">

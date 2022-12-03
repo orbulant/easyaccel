@@ -1,0 +1,14 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+---
+
+<Layout title="404">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Page Not Found</Fragment>
+      <Fragment slot="desc">Error (404), Page Not Found.</Fragment>
+    </Sectionhead>
+  </Container>
+</Layout>

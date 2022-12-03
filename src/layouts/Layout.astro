@@ -27,8 +27,8 @@ const resolvedImageWithDomain = new URL(
 const { title } = Astro.props;
 
 const makeTitle = title
-  ? title + " | " + "Astroship"
-  : "Astroship - Starter Template for Astro with TailwindCSS & Alpine.js";
+  ? title + " | " + "EasyAccel"
+  : "EasyAccel - Malaysia's Cheapest E-Commerce Provider";
 ---
 
 <!DOCTYPE html>
@@ -42,22 +42,17 @@ const makeTitle = title
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="EasyAccel is Malaysia's Cheapest E-Commerce Provider with powerful features such as Analytics, Customer Mailing Lists and Search Engine Optimization (SEO), all at a very low cost!"
       canonical={canonicalURL}
-      twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
-        card: "summary_large_image",
-      }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: `EasyAccel - Malaysia's Cheapest E-Commerce Provider`,
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "EasyAccel Homepage Screenshot",
         },
       }}
     />

@@ -17,6 +17,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://easyaccel.com",
+  site: "https://www.easyaccel.com",
   integrations: [tailwind(), alpinejs(), image(), mdx(), sitemap()]
 });

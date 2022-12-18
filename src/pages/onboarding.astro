@@ -1,0 +1,63 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const steps = [
+  "Select a plan.",
+  "Contact Us via the form or e-mail.",
+  "You will receive an e-mail address from our team to gather requirements and establish a connection.",
+  "Select a template design -or- custom design if Custom Plan is chosen.",
+  "You will then receive credentials to your Shopify Account, E-Mail Accounts and etc.",
+  "Upload your products via Shopify.",
+  "Products will automatically appear on the Storefront Website instantly.",
+  "Finish.",
+];
+
+const customer = [
+  "Visit storefront page (e.g., https://examplestore.com/)",
+  "Browse through the website.",
+  "Select Product desired.",
+  "Choose Product Variant (e.g., Colour, Size, Quanity, etc).",
+  "Add Product to Cart.",
+  "Checkout",
+  "Enter Checkout Information (e.g., Shipping Address)",
+  "Select Payment Options & Enter Payment Information",
+  "Confirm Payment",
+  "Finish.",
+];
+---
+
+<Layout title="How does it work?">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">How does it work?</Fragment>
+      <Fragment slot="desc"
+        >Let's break down the steps of how you can get your business online as
+        soon as possible?</Fragment
+      >
+    </Sectionhead>
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <ul class="steps steps-vertical">
+        {
+          steps.map((each, index) => (
+            <li class={index < 4 ? "step step-primary" : "step"}>{each}</li>
+          ))
+        }
+      </ul>
+    </div>
+    <Sectionhead>
+      <Fragment slot="title">Customer Buying Experience</Fragment>
+      <Fragment slot="desc">What will the customer go through?</Fragment>
+    </Sectionhead>
+    <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
+      <ul class="steps steps-vertical">
+        {
+          customer.map((each, index) => (
+            <li class={index < 4 ? "step step-primary" : "step"}>{each}</li>
+          ))
+        }
+      </ul>
+    </div>
+  </Container>
+</Layout>

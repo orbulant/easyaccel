@@ -1,0 +1,62 @@
+---
+import { Check, Minus } from "@components/ui/icons";
+const { content } = Astro.props;
+---
+
+<div class="overflow-x-auto">
+  <table class="table w-full">
+    <thead>
+      <tr class="text-center">
+        {
+          content.headers.map((header: string, index: number) => (
+            <th class={index === 0 ? "w-2/5" : "w-1/5"}>{header}</th>
+          ))
+        }
+      </tr>
+    </thead>
+    <tbody>
+      {
+        content.rows.map(
+          (row: {
+            header: string;
+            subheader: string;
+            link: string;
+            anchorText: string;
+            data: any[];
+          }) => (
+            <tr class="hover">
+              <th>
+                <p class="whitespace-normal">{row.header}</p>
+                <p class="text-gray-400 font-light whitespace-normal">
+                  {row.subheader}
+                </p>
+                <a
+                  class="link link-info font-light whitespace-normal"
+                  href={row.link}>
+                  {row.anchorText}
+                </a>
+              </th>
+              {row.data.map((each) =>
+                typeof each === "boolean" ? (
+                  <td class="">
+                    {each ? (
+                      <p class="flex justify-center">
+                        <Check class="w-5 h-5" />
+                      </p>
+                    ) : (
+                      <p class="flex justify-center">
+                        <Minus class="w-4 h-4" />
+                      </p>
+                    )}
+                  </td>
+                ) : (
+                  <td class="text-center font-light">{each}</td>
+                )
+              )}
+            </tr>
+          )
+        )
+      }
+    </tbody>
+  </table>
+</div>

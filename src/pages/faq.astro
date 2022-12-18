@@ -1,0 +1,68 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const questions = [
+  {
+    title: "How long will the initial setup be?",
+    content:
+      "Upon payment, we promise a quick time-to-market (TTM) to quick launch your online business! The entire setup process will take anywhere from 1 week(s) to 6 week(s).",
+  },
+  {
+    title: "Is the payment annual or monthly?",
+    content:
+      "We offer both annual and monthly subscriptions. Inquire us for a flexible payment option and amount.",
+  },
+  {
+    title: "EasyAccel vs X. (Why Choose Us?)",
+    content: [
+      "EasyAccel uses Vercel and Shopify combined, this provides a very easy AND enjoyable experience for both businesses and customers.",
+      "EasyAccel uses technologies that are guaranteed to outperform competitors in terms of Google SEO (Search Engine Optimizations). Due to it's faster server performance, better edge locations, better performance, and better Google Lighthouse Score. The only limiting factor would be the keywords provided and marketing capability provided by our customers.",
+      "EasyAccel can serve multiple countries at once. If you decide to turn to markets elsewhere, EasyAccel can provide solutions at a global-scale instantly.",
+    ],
+  },
+  {
+    title: "EasyAccel vs Do-It-Yourself (DIY)",
+    content: [
+      "What's stopping you from seting an a basic online store using available providers such as Shopify, etc?",
+      "At EasyAccel, we pride ourselves by removing the technical hassle from our clients, technology moves too fast and sustainability in the long term is guaranteed with us as we use bleeding edge technologies to stay relevant and competitive.",
+      "For example, Google SEO would come hand-in-hand with us and we are able to guide our clients to reach SUITABLE intended markets with our domain knowledge.",
+      "Furthermore, by offloading the technical aspect to EasyAccel, our clients are able to focus more on running the business rather than dealing with the intricacies of developing and maintaining an online store, such as competitive website performances.",
+    ],
+    link: "https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales",
+    anchorText:
+      "For every 100ms in lag of a website, Sales drop by 1% - Amazon",
+  },
+];
+---
+
+<Layout title="Frequently Asked Questions">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Frequently Asked Questions</Fragment>
+      <Fragment slot="desc">Still confused? No worries, we are here to help.</Fragment>
+    </Sectionhead>
+    <div class="grid grid-flow-row gap-10 mt-10 justify-center">
+      {
+        questions.map((each) => (
+          <div class="card w-100 max-w-[650px] bg-base-100 shadow-xl">
+            <div class="card-body">
+              <h2 class="card-title">{each.title}</h2>
+              {typeof each.content === "object" ? (
+                each.content.map((eachContent) => (
+                  <li class="break-words text-justify">{eachContent}</li>
+                ))
+              ) : (
+                <p class="break-words text-justify">{each.content}</p>
+              )}
+              <a class="link link-primary" href={each.link}>
+                {each.anchorText}
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</Layout>

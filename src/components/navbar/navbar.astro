@@ -4,10 +4,11 @@ import Link from "@components/ui/link.astro";
 import Dropdown from "./dropdown.astro";
 
 const menuitems = [
+  { title: "How does it work?", path: "/onboarding" },
   {
     title: "Pricing",
     path: "#",
-    children: [{ title: "E-Commerce", path: "/ecommerce" }],
+    children: [{ title: "E-Commerce", path: "/pricing/ecommerce" }],
   },
   {
     title: "About",
@@ -17,6 +18,7 @@ const menuitems = [
     title: "Contact",
     path: "/contact",
   },
+  { title: "FAQs", path: "/faq" },
 ];
 ---
 

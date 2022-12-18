@@ -24,6 +24,7 @@ const { plan } = Astro.props;
           </p>
         )
       }
+      {typeof plan.price === "string" && <div class="h-9" />}
     </div><ul class="grid mt-8 text-left gap-y-4">
       {
         plan.features.map((item: any) => (

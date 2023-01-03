@@ -4,10 +4,10 @@ const { title, children } = Astro.props;
 ---
 
 <li tabindex="0">
-  <a class="btn btn-ghost rounded-btn justify-start">
+  <button class="btn btn-ghost rounded-btn justify-start">
     {title}
     <RightArrow />
-  </a>
+  </button>
   <ul tabindex="0" class="p-2 shadow bg-white dark:bg-black">
     {
       children.map((each) => (

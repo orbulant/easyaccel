@@ -41,7 +41,9 @@ const customer = [
       <ul class="steps steps-vertical">
         {
           steps.map((each, index) => (
-            <li class={index < 4 ? "step step-primary" : "step"}>{each}</li>
+            <li class={index < 4 ? "step step-primary" : "step"}>
+              <p class="text-start">{each}</p>
+            </li>
           ))
         }
       </ul>
@@ -54,7 +56,9 @@ const customer = [
       <ul class="steps steps-vertical">
         {
           customer.map((each, index) => (
-            <li class={index < 4 ? "step step-primary" : "step"}>{each}</li>
+            <li class={index < 4 ? "step step-primary" : "step"}>
+              <p class="text-start">{each}</p>
+            </li>
           ))
         }
       </ul>

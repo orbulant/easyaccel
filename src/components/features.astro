@@ -46,7 +46,7 @@ const features = [
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
     Why choose EasyAccel over other options?
   </h2>
-  <p class="text-lg mt-4 text-slate-600">
+  <p class="text-lg mt-4">
     EasyAccel is a highly dedicated and bleeding edge firm focusing on providing
     the best value to customers for the lowest price possible.
   </p>
@@ -56,12 +56,12 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 rounded-full p-2 w-8 h-8 shrink-0 bg-black dark:bg-transparent">
+          <Icon name={item.icon} class="text-white dark:text-inherit" />
         </div>
         <div>
           <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
-          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+          <p class="mt-2 leading-relaxed dark:text-gray-300">{item.description}</p>
         </div>
       </div>
     ))

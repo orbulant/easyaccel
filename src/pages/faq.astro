@@ -30,6 +30,7 @@ const questions = [
       "For example, Google SEO would come hand-in-hand with us and we are able to guide our clients to reach SUITABLE intended markets with our domain knowledge.",
       "Furthermore, by offloading the technical aspect to EasyAccel, our clients are able to focus more on running the business rather than dealing with the intricacies of developing and maintaining an online store, such as competitive website performances.",
     ],
+    new: true,
     link: "https://www.gigaspaces.com/blog/amazon-found-every-100ms-of-latency-cost-them-1-in-sales",
     anchorText:
       "For every 100ms in lag of a website, Sales drop by 1% - Amazon",
@@ -41,14 +42,20 @@ const questions = [
   <Container>
     <Sectionhead>
       <Fragment slot="title">Frequently Asked Questions</Fragment>
-      <Fragment slot="desc">Still confused? No worries, we are here to help.</Fragment>
+      <Fragment slot="desc"
+        >Still confused? No worries, we are here to help.</Fragment
+      >
     </Sectionhead>
     <div class="grid grid-flow-row gap-10 mt-10 justify-center">
       {
         questions.map((each) => (
           <div class="card w-100 max-w-[650px] bg-base-100 shadow-xl">
             <div class="card-body">
-              <h2 class="card-title">{each.title}</h2>
+              <h2 class="card-title">
+                {each.title}{" "}
+                {each.new && <div class="badge badge-secondary">NEW</div>}
+              </h2>
+
               {typeof each.content === "object" ? (
                 each.content.map((eachContent) => (
                   <li class="break-words text-justify">{eachContent}</li>

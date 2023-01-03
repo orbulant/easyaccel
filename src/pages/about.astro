@@ -47,10 +47,8 @@ const team = [
     </Sectionhead>
 
     <div class="flex flex-col gap-3 mx-auto max-w-4xl mt-16">
-      <h2 class="font-bold text-3xl text-gray-800">
-        Empowering Malaysia with EasyAccel
-      </h2>
-      <p class="text-lg leading-relaxed text-slate-500">
+      <h2 class="font-bold text-3xl">Empowering Malaysia with EasyAccel</h2>
+      <p class="text-lg leading-relaxed -500 text-gray-500 dark:text-inherit">
         We are a young entrepreneurial team with a diverse skillset background,
         passionate in delivering high impact, low cost solutions.
         <wbr />
@@ -67,14 +65,17 @@ const team = [
               <Image
                 {...item.avatar}
                 format="avif"
-                alt="Team"
-                class="w-full h-full object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
+                alt="EasyAccel Founders and Team Members"
+                class="object-cover rounded transition  group-hover:-translate-y-1 group-hover:shadow-xl"
               />
             </div>
 
             <div class="mt-4 text-center">
-              <h2 class="text-lg text-gray-800"> {item.name}</h2>
-              <h3 class="text-sm text-slate-500"> {item.title}</h3>
+              <h2 class="text-lg"> {item.name}</h2>
+              <h3 class="text-sm -500 text-gray-500 dark:text-inherit">
+                {" "}
+                {item.title}
+              </h3>
             </div>
           </div>
         ))

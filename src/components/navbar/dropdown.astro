@@ -1,12 +1,12 @@
 ---
-import Rightarrow from "@components/ui/icons/rightarrow.astro";
+import { RightArrow } from "@components/ui/icons";}
 const { title, children } = Astro.props;
 ---
 
 <li tabindex="0">
   <a class="btn btn-ghost rounded-btn justify-start">
     {title}
-    <Rightarrow />
+    <RightArrow />
   </a>
   <ul tabindex="0" class="p-2 shadow bg-white dark:bg-black">
     {

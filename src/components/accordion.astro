@@ -3,10 +3,9 @@ const { title, open } = Astro.props;
 ---
 
 <div
-  tabindex="0"
   class="collapse collapse-arrow border border-base-300 bg-base-100 rounded-box my-4">
   <input type="checkbox" class="peer" checked={open} />
-  <div class="collapse-title text-xl font-medium">{title}</div>
+  <div class="collapse-title text-xl font-medium peer-checked:bg-primary peer-checked:text-white dark:peer-checked:text-black">{title}</div>
   <div class="collapse-content">
     <slot />
   </div>

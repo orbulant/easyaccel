@@ -1,18 +1,18 @@
 ---
 import { RightArrow } from "@components/ui/icons";
-const { title, children } = Astro.props;
+const { title, children, key } = Astro.props;
 ---
 
-<li tabindex="0">
+<li tabindex={key}>
   <button class="btn btn-ghost rounded-btn justify-start">
     {title}
     <RightArrow />
   </button>
-  <ul tabindex="0" class="p-2 shadow bg-white dark:bg-black">
+  <ul tabindex={key} class="p-2 shadow bg-white dark:bg-zinc-900">
     {
       children.map((each) => (
         <li>
-          <a href={each.path}>{each.title}</a>
+          <a class="btn btn-ghost rounded-btn" href={each.path}>{each.title}</a>
         </li>
       ))
     }

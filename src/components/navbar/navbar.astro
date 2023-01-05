@@ -64,15 +64,21 @@ const menuitems = [
             }
           </ul>
         </div>
-        <a class="btn btn-ghost normal-case text-xl" href="/"><p class="font-light">Easy</p><p class="font-semibold">Accel</p></a>
+        <a class="btn btn-ghost normal-case text-xl" href="/"
+          ><p class="font-light">Easy</p><p class="font-semibold">Accel</p>
+        </a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
           {
-            menuitems.map((item) => (
+            menuitems.map((item, index) => (
               <>
                 {item.children && (
-                  <Dropdown title={item.title} children={item.children} />
+                  <Dropdown
+                    key={index}
+                    title={item.title}
+                    children={item.children}
+                  />
                 )}
 
                 {!item.children && (

@@ -88,7 +88,7 @@ const features = [
           subheader: "Includes one custom domain.",
           data: [true, true, true],
         },
-        { header: "Design", data: ["Template", "Template + Addons", "Custom"] },
+        { header: "Design", data: ["Template", "Template + Custom", "Custom"] },
         { header: "E-Mail Accounts", data: [5, 10, 15] },
         { header: "Unlimited Products", data: [true, true, true] },
         { header: "Unlimited Orders", data: [true, true, true] },
@@ -255,6 +255,20 @@ const features = [
           subheader:
             "Estimate and collect duties and import taxes at checkout to give customers total cost clarity.",
           data: [true, true, true],
+        },
+      ],
+    },
+  },
+  {
+    title: "Continuity",
+    data: {
+      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+      rows: [
+        {
+          header: "Custom Design",
+          subheader:
+            "A Custom Design change can be requested at any time. Charged once per design change.",
+          data: [false, "1000 MYR Onwards", "3500 MYR Onwards"],
         },
       ],
     },

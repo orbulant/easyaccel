@@ -10,6 +10,10 @@ const showcase = [
 		desc: 'An apparel & sneaker store based in Petaling Jaya! IYKYK Select sells the trendiest "Hypewear" that is most common with the fashion-heads.',
 		image: "/iykykselect.png",
 		imageAlt: "IYKYK Select Store's Website created by easyaccel.com",
+		avatar: {
+			width: 2500,
+			height: 5431,
+		},
 		link: "https://www.iykykselect.com/",
 		ttm: "2 Weeks",
 		ttmsince: "February 2nd 2023 - ongoing",
@@ -37,12 +41,11 @@ const showcase = [
 										⬇️ Scroll to have a glance! ⬇️
 									</span>
 									<Image
+										{...each.avatar}
 										src={each.image}
 										alt={each.imageAlt}
 										format="avif"
 										class="p-4 space-x-4 bg-neutral"
-										width="100%"
-										height="100%"
 									/>
 								</div>
 							</figure>

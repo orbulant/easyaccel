@@ -7,300 +7,349 @@ import Table from "@components/table.astro";
 import Accordion from "@components/accordion.astro";
 
 enum Plans {
-  FIRST = "Basic",
-  SECOND = "Plus",
-  THIRD = "Custom + SEO",
+	FIRST = "Basic",
+	SECOND = "Plus",
+	THIRD = "Enterprise",
 }
 
 const pricing = [
-  {
-    name: Plans.FIRST,
-    price: { monthly: "179 MYR", original: "199 MYR" },
-    popular: false,
-    features: [
-      "Unlimited Products & Orders",
-      "Basic Reports",
-      "Basic Online Storefront",
-      "Template Design",
-      "Basic Integrations",
-      "Basic Support",
-    ],
-    button: {
-      text: "Contact Us",
-      link: "/contact",
-    },
-  },
-  {
-    name: Plans.SECOND,
-    price: {
-      monthly: "379 MYR",
-      original: "499 MYR",
-    },
-    popular: true,
-    features: [
-      "Unlimited Products & Orders",
-      "Standard Reports & Analytics",
-      "Sales Channels",
-      "Automations",
-      "Customised Template Designs",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
-    button: {
-      text: "Contact Us",
-      link: "/contact",
-    },
-  },
-  {
-    name: Plans.THIRD,
-    price: "Custom",
-    popular: false,
-    features: [
-      "99.99% SLA",
-      "Competitive SEOs",
-      "Specialised Sales Channels",
-      "Custom Design",
-      "Advanced Integrations",
-      "Priority Support",
-    ],
-    button: {
-      text: "Contact Us",
-      link: "/contact",
-    },
-  },
+	{
+		name: Plans.FIRST,
+		price: { monthly: "179 MYR", original: "199 MYR" },
+		popular: false,
+		features: [
+			"Unlimited Products & Orders",
+			"Basic Reports",
+			"Basic Online Storefront",
+			"Template Design",
+			"Basic Integrations",
+			"Basic Support",
+		],
+		button: {
+			text: "Contact Us",
+			link: "/contact",
+		},
+	},
+	{
+		name: Plans.SECOND,
+		price: {
+			monthly: "379 MYR",
+			original: "499 MYR",
+		},
+		popular: true,
+		features: [
+			"Unlimited Products & Orders",
+			"Standard Reports & Analytics",
+			"Sales Channels",
+			"Automations",
+			"Customised Template Designs",
+			"Advanced Integrations",
+			"Priority Support",
+		],
+		button: {
+			text: "Contact Us",
+			link: "/contact",
+		},
+	},
+	{
+		name: Plans.THIRD,
+		price: "Custom",
+		popular: false,
+		features: [
+			"99.99% SLA",
+			"Competitive SEOs",
+			"Specialised Sales Channels",
+			"Custom Design",
+			"Advanced Integrations",
+			"Priority Support",
+		],
+		button: {
+			text: "Contact Us",
+			link: "/contact",
+		},
+	},
 ];
 
 const features = [
-  {
-    title: "Core Features",
-    open: true,
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        {
-          header: "Online Store",
-          subheader:
-            "Includes a Mobile Compatible Website. With SSL Certicicate.",
-          data: [true, true, true],
-        },
-        {
-          header: "Custom Domain",
-          subheader: "Includes one custom domain.",
-          data: [true, true, true],
-        },
-        { header: "Design", data: ["Template", "Template + Custom", "Custom"] },
-        { header: "E-Mail Accounts", data: ["25 MYR/user/month", "50 MYR/user/month", "Custom"] },
-        {header: "E-Mail Capabilities", data: ["Basic Usage", "Professional Usage", "Full-Spec Enterprise"]},
-        { header: "Unlimited Products", data: [true, true, true] },
-        { header: "Unlimited Orders", data: [true, true, true] },
-        { header: "Staff Accounts", data: [2, 5, 15] },
-        { header: "Inventory Locations", data: [4, 5, 8] },
-        { header: "Manual Order Creation", data: [true, true, true] },
-      ],
-    },
-  },
-  {
-    title: "Technical Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        { header: "Uptime", data: ["99.99%", "99.99%", "99.99% SLA"] },
-        {
-          header: "PCI DSS Compliant",
-          subheader:
-            "Level 1 PCI DSS Compliant. This means all customer data and your your data is ultra secure.",
-          data: [true, true, true],
-        },
-      ],
-    },
-  },
-  {
-    title: "Business Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        { header: "Abandoned Cart Recovery", data: [true, true, true] },
-        {
-          header: "Basic Sales Channels",
-          subheader: "Includes selling on Tiktok, Facebook, JD, etc.",
-          data: [false, true, true],
-        },
-        {
-          header: "Specialised Sales Channels",
-          subheader: "Includes selling on Shopee, Lazada, etc.",
-          data: [false, false, true],
-        },
-        {
-          header: "E-Commerce Automations",
-          subheader: "Automate Business Workflows.",
-          link: "/automations",
-          anchorText: "Click here to learn more.",
-          data: [false, true, true],
-        },
-      ],
-    },
-  },
-  {
-    title: "Marketing Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        {
-          header: "Customer Data (Clientele) Collection",
-          data: [true, true, true],
-        },
-        { header: "Ratings & Reviews", data: [true, true, true] },
-        {
-          header: "Clientele Marketing",
-          subheader: "Includes segmentation, filtering, groupings, etc.",
-          data: [true, true, true],
-        },
-        {
-          header: "Google SEO",
-          subheader:
-            "SEO makes your website appear on the earlier pages of Google Searches",
-          link: "/seo",
-          anchorText: "Click here to learn more.",
-          data: ["Basic", "Advanced", "Competitive"],
-        },
-        { header: "Google SEM", data: [false, false, true] },
-        { header: "Unlimited Contacts", data: [true, true, true] },
-        { header: "Ratings & Reviews", data: [true, true, true] },
-        { header: "Discount Codes", data: [true, true, true] },
-        { header: "Gift Cards", data: [true, true, true] },
-        {
-          header: "Marketing Automations",
-          subheader:
-            "Automated E-Mails with templated workflows or pre-defined workflows.",
-          data: [true, true, true],
-        },
-      ],
-    },
-  },
-  {
-    title: "Support Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        { header: "E-Mail Support", data: [true, true, true] },
-        { header: "Priority", data: ["Basic", "Priority", "Priority"] },
-        { header: "Direct Messaging Support", data: [true, true, true] },
-        { header: "Direct Phone Support", data: [false, false, true] },
-        { header: "24/7 Support", data: [false, false, true] },
-      ],
-    },
-  },
-  {
-    title: "Payment Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        {
-          header: "Common Payment Gateways",
-          link: "/payments",
-          anchorText:
-            "Click here to refer to the full list of supported payment gateways.",
-          data: [true, true, true],
-        },
-        { header: "Integrated Payment Gateway", data: [true, true, true] },
-        { header: "Transaction Fees", data: ["2.0%", "1.0%", "0.5%"] },
-        {
-          header: "Automatic Calculated Shipping Rates",
-          data: [true, true, true],
-        },
-        {
-          header: "3rd-Party Calculated Shipping Rates",
-          data: [false, false, true],
-        },
-      ],
-    },
-  },
-  {
-    title: "Reporting Features",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [{ header: "Reports", data: ["Basic", "Standard", "Advanced"] }],
-    },
-  },
-  {
-    title: "International Commerce",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        {
-          header: "International Market Management",
-          subheader:
-            "Manage different regions to ensure a localized shopping experience.",
-          data: [true, true, true],
-        },
-        {
-          header: "Region Specific Domains",
-          subheader:
-            "Assign different web addresses based on the region for optimized performance and user experience.",
-          data: [true, true, true],
-        },
-        {
-          header: "Language Translations",
-          subheader:
-            "Easily Translate Storefronts as well as Staff Accounts to provide a familiar shopping experience as well as management across different regions.",
-          data: [true, true, true],
-        },
-        {
-          header: "Product Pricing by Market",
-          subheader:
-            "Take control by implement pricing strategies for different products based on the regions.",
-          data: [true, true, true],
-        },
-        {
-          header: "Taxes and Duties",
-          subheader:
-            "Estimate and collect duties and import taxes at checkout to give customers total cost clarity.",
-          data: [true, true, true],
-        },
-      ],
-    },
-  },
-  {
-    title: "Continuity",
-    data: {
-      headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
-      rows: [
-        {
-          header: "Custom Design",
-          subheader:
-            "A Custom Design change can be requested at any time. Charged once per design change.",
-          data: [false, "1000 MYR Onwards", "3500 MYR Onwards"],
-        },
-      ],
-    },
-  },
+	{
+		title: "Core Features",
+		open: true,
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{
+					header: "Online Store",
+					subheader:
+						"Includes a Mobile Compatible Website. With SSL Certicicate.",
+					data: [true, true, true],
+				},
+				{
+					header: "Custom Domain",
+					subheader:
+						"Includes one custom domain (price may vary depending on the desired domain). Depending if you already own the domain or not",
+					data: [
+						"100-250 MYR /year",
+						"100-250 MYR /year",
+						"250+ MYR/year",
+					],
+				},
+				{
+					header: "Design",
+					data: ["Template", "Template + Custom", "Custom"],
+				},
+				{
+					header: "E-Mail Accounts",
+					data: ["25 MYR/user/month", "40 MYR/user/month", "Custom"],
+				},
+				{
+					header: "E-Mail Capabilities",
+					data: [
+						"Basic Usage",
+						"Professional Usage",
+						"Full-Spec Enterprise",
+					],
+				},
+				{ header: "Unlimited Products", data: [true, true, true] },
+				{ header: "Unlimited Orders", data: [true, true, true] },
+				{ header: "Staff Accounts", data: [2, 5, 15] },
+				{ header: "Inventory Locations", data: [4, 5, 8] },
+				{ header: "Manual Order Creation", data: [true, true, true] },
+			],
+		},
+	},
+	{
+		title: "Technical Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{ header: "Uptime", data: ["99.99%", "99.99%", "99.99% SLA"] },
+				{
+					header: "PCI DSS Compliant",
+					subheader:
+						"Level 1 PCI DSS Compliant. This means all customer data and your your data is ultra secure.",
+					data: [true, true, true],
+				},
+			],
+		},
+	},
+	{
+		title: "Business Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{ header: "Abandoned Cart Recovery", data: [true, true, true] },
+				{
+					header: "Basic Sales Channels",
+					subheader: "Includes selling on Tiktok, Facebook, JD, etc.",
+					data: [false, true, true],
+				},
+				{
+					header: "Specialised Sales Channels",
+					subheader: "Includes selling on Shopee, Lazada, etc.",
+					data: [false, false, true],
+				},
+				{
+					header: "E-Commerce Automations",
+					subheader: "Automate Business Workflows.",
+					link: "/automations",
+					anchorText: "Click here to learn more.",
+					data: [false, true, true],
+				},
+			],
+		},
+	},
+	{
+		title: "Marketing Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{
+					header: "Customer Data (Clientele) Collection",
+					data: [true, true, true],
+				},
+				{ header: "Ratings & Reviews", data: [true, true, true] },
+				{
+					header: "Clientele Marketing",
+					subheader:
+						"Includes segmentation, filtering, groupings, etc.",
+					data: [true, true, true],
+				},
+				{
+					header: "Google SEO",
+					subheader:
+						"SEO makes your website appear on the earlier pages of Google Searches",
+					link: "/seo",
+					anchorText: "Click here to learn more.",
+					data: ["Basic", "Advanced", "Competitive"],
+				},
+				{ header: "Google SEM", data: [false, false, true] },
+				{ header: "Unlimited Contacts", data: [true, true, true] },
+				{ header: "Ratings & Reviews", data: [true, true, true] },
+				{ header: "Discount Codes", data: [true, true, true] },
+				{ header: "Gift Cards", data: [true, true, true] },
+				{
+					header: "Marketing Automations",
+					subheader:
+						"Automated E-Mails with templated workflows or pre-defined workflows.",
+					data: [true, true, true],
+				},
+			],
+		},
+	},
+	{
+		title: "Support Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{ header: "E-Mail Support", data: [true, true, true] },
+				{ header: "Priority", data: ["Basic", "Priority", "Priority"] },
+				{
+					header: "Direct Messaging Support",
+					data: [true, true, true],
+				},
+				{ header: "Direct Phone Support", data: [false, false, true] },
+				{ header: "24/7 Support", data: [false, false, true] },
+			],
+		},
+	},
+	{
+		title: "Payment Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{
+					header: "Common Payment Gateways",
+					link: "/payments",
+					anchorText:
+						"Click here to refer to the full list of supported payment gateways.",
+					data: ["Limited", "Full", "Full"],
+				},
+				{
+					header: "Integrated Payment Gateway",
+					data: [true, true, true],
+				},
+				{ header: "Transaction Fees", data: ["0%", "4-6%", "4-6%"] },
+				{
+					header: "Automatic Calculated Shipping Rates",
+					data: [true, true, true],
+				},
+				{
+					header: "3rd-Party Calculated Shipping Rates",
+					data: [false, false, true],
+				},
+			],
+		},
+	},
+	{
+		title: "Reporting Features",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{ header: "Reports", data: ["Basic", "Standard", "Advanced"] },
+			],
+		},
+	},
+	{
+		title: "International Commerce",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{
+					header: "International Market Management",
+					subheader:
+						"Manage different regions to ensure a localized shopping experience.",
+					data: [true, true, true],
+				},
+				{
+					header: "Region Specific Domains",
+					subheader:
+						"Assign different web addresses based on the region for optimized performance and user experience.",
+					data: [true, true, true],
+				},
+				{
+					header: "Language Translations",
+					subheader:
+						"Easily Translate Storefronts as well as Staff Accounts to provide a familiar shopping experience as well as management across different regions.",
+					data: [true, true, true],
+				},
+				{
+					header: "Product Pricing by Market",
+					subheader:
+						"Take control by implement pricing strategies for different products based on the regions.",
+					data: [true, true, true],
+				},
+				{
+					header: "Taxes and Duties",
+					subheader:
+						"Estimate and collect duties and import taxes at checkout to give customers total cost clarity.",
+					data: [true, true, true],
+				},
+			],
+		},
+	},
+	{
+		title: "Continuity",
+		data: {
+			headers: ["", Plans.FIRST, Plans.SECOND, Plans.THIRD],
+			rows: [
+				{
+					header: "Custom Design",
+					subheader:
+						"A Custom Design change can be requested at any time. Charged once per design change.",
+					data: [false, "1800 MYR+/one-time", "3500 MYR+/one-time"],
+				},
+				{
+					header: "Google SEM",
+					subheader:
+						"Full Suite of Google SEM and Google Marketplace Utilisation.",
+					data: [
+						"Pool Budget + 150 MYR/month",
+						"Pool Budget + 150 MYR/month",
+						"Pool Budget",
+					],
+				},
+				{
+					header: "E-Mail Migration",
+					subheader:
+						"Transfer your e-mails from your existing domains to the new one with us. Hassle free. \n *prices may vary based on the storage size of existing e-mails*",
+					data: [
+						"350 MYR/one-time",
+						"1000 MYR/one-time",
+						"1000+ MYR/one-time",
+					],
+				},
+			],
+		},
+	},
 ];
 ---
 
 <Layout title="Pricing">
-  <Container>
-    <Sectionhead>
-      <Fragment slot="title">E-Commerce Storefront Pricing</Fragment>
-      <Fragment slot="desc"
-        >Simple & Predictable pricing. No Surprises. Charged monthly.</Fragment
-      >
-    </Sectionhead>
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">E-Commerce Storefront Pricing</Fragment>
+			<Fragment slot="desc">
+				Simple & Predictable pricing. No Surprises.
+			</Fragment>
+		</Sectionhead>
 
-    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
-      {pricing.map((item) => <Pricing plan={item} />)}
-    </div>
-    <Sectionhead>
-      <Fragment slot="title">Compare all plans</Fragment>
-      <Fragment slot="desc">Pick out which one is right for you.</Fragment>
-    </Sectionhead>
-    <div class="mx-auto max-w-screen-lg mt-12">
-      {
-        features.map((each) => (
-          <Accordion title={each.title} open={each.open}>
-            <Table content={each.data} />
-          </Accordion>
-        ))
-      }
-    </div>
-  </Container>
+		<div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+			{pricing.map((item) => <Pricing plan={item} />)}
+		</div>
+		<Sectionhead>
+			<Fragment slot="title">Compare all plans</Fragment>
+			<Fragment slot="desc">
+				Pick out which one is right for you.
+			</Fragment>
+		</Sectionhead>
+		<div class="mx-auto max-w-screen-lg mt-12">
+			{
+				features.map((each) => (
+					<Accordion title={each.title} open={each.open}>
+						<Table content={each.data} />
+					</Accordion>
+				))
+			}
+		</div>
+	</Container>
 </Layout>

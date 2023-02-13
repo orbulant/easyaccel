@@ -1,0 +1,73 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+
+const showcase = [
+	{
+		title: "IYKYK Select Store",
+		desc: 'An apparel & sneaker store based in Petaling Jaya! IYKYK Select sells the trendiest "Hypewear" that is most common with the fashion-heads.',
+		image: "/iykykselect.png",
+		imageAlt: "IYKYK Select Store's Website created by easyaccel.com",
+		link: "https://www.iykykselect.com/",
+		ttm: "2 Weeks",
+		ttmsince: "February 2nd 2023 - ongoing",
+	},
+];
+---
+
+<Layout title="Showcase of Clients">
+	<Container>
+		<Sectionhead>
+			<Fragment slot="title">Showcase</Fragment>
+			<Fragment slot="desc">
+				Current existing or past clients that we've helped skyrockted
+				their business to the online realm!
+			</Fragment>
+		</Sectionhead>
+		<div class="grid grid-flow-row gap-10 mt-10 justify-center">
+			{
+				showcase.map((each) => (
+					<>
+						<div class="card lg:card-side bg-base-100 shadow-x border">
+							<figure>
+								<div class="carousel carousel-vertical h-96 overflow-scroll ">
+									<span class="text-xl text-center m-5">
+										⬇️ Scroll to have a glance! ⬇️
+									</span>
+									<img
+										src={each.image}
+										alt={each.imageAlt}
+										class="p-4 space-x-4 bg-neutral"
+									/>
+								</div>
+							</figure>
+							<div class="border" />
+							<div class="card-body">
+								<h2 class="card-title">{each.title}</h2>
+								<p>{each.desc}</p>
+								<div class="stats stats-vertical shadow">
+									<div class="stat">
+										<div class="stat-title">TTM</div>
+										<div class="stat-value">{each.ttm}</div>
+										<div class="stat-desc">
+											{each.ttmsince}
+										</div>
+									</div>
+								</div>
+								<div class="card-actions justify-end">
+									<a
+										target="_blank"
+										href={each.link}
+										class="btn btn-primary">
+										Visit this site!
+									</a>
+								</div>
+							</div>
+						</div>
+					</>
+				))
+			}
+		</div>
+	</Container>
+</Layout>

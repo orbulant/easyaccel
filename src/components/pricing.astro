@@ -5,42 +5,46 @@ const { plan } = Astro.props;
 ---
 
 <div>
-  <div
-    class={`flex flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] ${
-      plan.popular && "dark:border-primary"
-    } border-opacity-50 py-5 px-6 rounded-md`}>
-    <div class="text-center">
-      <h4 class="text-lg font-medium">{plan.name}</h4><p
-        class="mt-3 text-4xl font-bold md:text-4xl">
-        {
-          plan.price && typeof plan.price === "object"
-            ? plan.price.monthly
-            : plan.price
-        }
-      </p>
-      {
-        plan.price.original && (
-          <p class="mt-1 text-xl font-medium line-through md:text-2xl">
-            {plan.price.original}
-          </p>
-        )
-      }
-      {typeof plan.price === "string" && <div class="h-9" />}
-    </div><ul class="grid mt-8 text-left gap-y-4">
-      {
-        plan.features.map((item: any) => (
-          <li class="flex items-start gap-3">
-            <Tick class="w-6 h-6" />
-            <span>{item}</span>
-          </li>
-        ))
-      }
-    </ul><div class="flex mt-8">
-      <a
-        href={plan.button.link || "#"}
-        class={`btn ${plan.popular ? "btn-primary" : "btn-accent"} w-full`}>
-        {plan.button.text || "Get Started"}
-      </a>
-    </div>
-  </div>
+	<div
+		class={`flex flex-col w-full order-first lg:order-none border-2 border-[#D8DEE9] ${
+			plan.popular && "dark:border-primary"
+		} border-opacity-50 py-5 px-6 rounded-md`}>
+		<div class="text-center">
+			<h4 class="text-lg font-medium">{plan.name}</h4><p
+				class="mt-3 text-4xl font-bold md:text-4xl">
+				{
+					plan.price && typeof plan.price === "object"
+						? plan.price.monthly
+						: plan.price
+				}
+			</p>
+			{
+				plan.price.original && (
+					<p class="mt-1 text-xl font-medium line-through md:text-2xl">
+						{plan.price.original}
+					</p>
+				)
+			}
+			<span class="font-light opacity-70">/ month</span>
+			{typeof plan.price === "string" && <div class="h-9" />}
+		</div>
+		<ul class="grid mt-8 text-left gap-y-4">
+			{
+				plan.features.map((item: any) => (
+					<li class="flex items-start gap-3">
+						<Tick class="w-6 h-6" />
+						<span>{item}</span>
+					</li>
+				))
+			}
+		</ul><div class="flex mt-8">
+			<a
+				href={plan.button.link || "#"}
+				class={`btn ${
+					plan.popular ? "btn-primary" : "btn-accent"
+				} w-full`}>
+				{plan.button.text || "Get Started"}
+			</a>
+		</div>
+	</div>
 </div>

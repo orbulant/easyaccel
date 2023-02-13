@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/container.astro";
 import Sectionhead from "@components/sectionhead.astro";
+import { Image } from "@astrojs/image/components";
 
 const showcase = [
 	{
@@ -21,7 +22,7 @@ const showcase = [
 		<Sectionhead>
 			<Fragment slot="title">Showcase</Fragment>
 			<Fragment slot="desc">
-				Current existing or past clients that we've helped skyrockted
+				Current existing or past clients that we've helped skyrocketed
 				their business to the online realm!
 			</Fragment>
 		</Sectionhead>
@@ -35,9 +36,10 @@ const showcase = [
 									<span class="text-xl text-center m-5">
 										⬇️ Scroll to have a glance! ⬇️
 									</span>
-									<img
+									<Image
 										src={each.image}
 										alt={each.imageAlt}
+										format="avif"
 										class="p-4 space-x-4 bg-neutral"
 									/>
 								</div>
